@@ -20,8 +20,13 @@ function buildToDo(todo){
   li.textContent = `${todo}  `
   li.appendChild(btn);
   document.querySelector('#tasks').appendChild(li);
-}
 
+  //we can now invoke the handleDelete Function
+  btn.addEventListener('click',handleDelete)
+}
+//function to run when the 'x' is clicked
 function handleDelete(e){
+
+//we are targeting th parentnodeof the btn hence using the .parentNode
   e.target.parentNode.remove();
 }
